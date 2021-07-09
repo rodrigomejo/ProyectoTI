@@ -1,0 +1,255 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+}
+
+/*Heder*/
+header{
+   width: 100%;
+   height: 60px;
+   font-family: sans-serif;
+   position: fixed;
+   top: 0;
+   right: 0;
+   z-index: 100;
+   background: white;
+}
+
+.contenedorHeader{
+   height: 100%;  
+   display: flex;
+   justify-content: space-between; 
+   margin: auto;
+   padding: 0px 20px;
+}
+
+header .logo{
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.logo img{
+   width: 60px;
+}
+
+.contenedorNav{
+   position: relative;
+   height: 100%;
+}
+
+nav{
+   height: 100%;
+}
+
+nav ul{
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+nav ul li{
+   margin: 0px 20px;
+   list-style: none;
+}
+
+nav ul li a{
+   color: #373737;
+   font-size: 14px;
+}
+
+.select{
+   background: #359EF9;
+   padding: 10px 30px;
+   color: white;
+   border-radius: 20px;
+}
+/*Formulario registro inicio sesio*/
+.contenedorPrincipal{
+   width: 100%;
+   max-width: 790px;
+   margin: auto;
+   position: relative;
+   font-family: sans-serif;
+}
+.cuerpoPagina{
+   width: 100%;
+   margin:125px 0px 60px 0px;
+   align-content: center;
+   background-image: url(../img/background-cover.svg);
+   background-size:contain;
+   
+}
+.cajaTrasera{
+   width: 100%;
+   padding: 10px 20px;
+   display: flex;
+   justify-content: center;
+   background-color: #46a2fd;
+   border-radius: 15px ;
+}
+.cajaTrasera div{
+   margin: 100px 40px;
+   color: white;
+   transition: all 500ms;
+}
+.cajaTrasera div p,
+.cajaTrasera div button{
+   margin-top: 30px;
+}
+.cajaTrasera div h3{
+   font-weight: 400px;
+   font-size: 26px;
+}
+.cajaTrasera button{
+   padding: 10px 40px;
+   border: 2px solid #fff;
+   border-radius: 15px;
+   background: transparent;
+   font-size: 14px;
+   font-weight: 600px;
+   cursor: pointer;
+   color: white;
+   outline: none;
+   transition: all 300ms;
+}
+.cajaTrasera button:hover{
+   background: #fff;
+   color: #46a2fd;
+   
+}
+/* Formularios login signin*/
+.contenedorLogin_Registro{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   max-width: 380px;
+   position: relative;
+   top: -180px;
+   left: 1px;
+
+   transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275) ;
+}
+.contenedorLogin_Registro form{
+   width: 100%;
+   padding: 65px 20px;
+   background: #fff;
+   position: absolute;
+   border-radius: 20px;
+   border: solid #318de9;
+}
+.contenedorLogin_Registro form h2 {
+   font-size: 38px;
+   text-align: center;
+   margin-bottom: 20px;
+   color: #46a2fd ;
+}
+.contenedorLogin_Registro form input {
+   width: 100%;
+   margin-top: 20px;
+   padding: 10px;
+   border: none;
+   background: #f2f2f2;
+   font-size: 16px;
+   outline: none;
+}
+.contenedorLogin_Registro form button {
+   padding: 10px 40px;
+   margin-top: 40px;
+   border: none;
+   font-size: 14px;
+   background: #46a2fd;
+   cursor: pointer;
+   outline: none;
+   color: white;
+   border-radius: 15px;
+}
+.formLogin{
+   opacity: 1;
+   display: block;
+}
+.formRegistro{
+   display: none;
+}
+
+
+
+
+/*AQUI COMIENZA EL FOOTER*/
+
+footer{
+   width: 100%;
+   padding: 5px 5px 0px;
+   font-family: sans-serif;
+
+   background-image: url(/img/background-footer.svg);
+   background-size: cover;
+}
+
+.contenedorFooter{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin: auto;
+   padding-top: 100px;
+}
+
+.cardFooter{
+   width: 30%;
+   display: flex;
+   flex-direction: column;
+   padding: 10px 40px 10px 40px;
+}
+
+.cardFooter .logo img{
+   width: 100px;
+}
+
+.cardFooter .terms{
+   margin-top: 20px;
+   font-weight: 500;
+   color: #7a7a7a;
+   font-size: 18px;
+
+}
+
+.cardFooter h2{
+   margin-bottom: 30px;
+   color: #242424;
+   font-weight: 700;
+}
+
+.cardFooter a{
+   margin-top: 10px;
+   color: #7a7a7a;
+   font-weight: 600;
+}
+
+.cardFooter a:hover{
+   opacity: 0.8;
+}
+
+.cardFooter a .fab{
+   font-size: 20px;
+}
+
+.divFooter{
+   margin: auto;
+   text-align: center;
+   padding: 0px 5px;
+}
+
+.divFooter p{
+   margin-top: 20px;
+   color: #7a7a7a;
+}
+
+.divFooter hr{
+   border: none;
+   height: 1px;
+   background-color: #7a7a7a;
+}
