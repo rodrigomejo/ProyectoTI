@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.contenedorPrincipal{
+    position: relative;
+    right: 0;
+    transition: all 300ms;
+}
+
+/*Heder*/
+header{
+    width: 100%;
+    height: 60px;
+    font-family: sans-serif;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background: white;
+}
+
+.contenedorHeader{
+    height: 100%;  
+    display: flex;
+    justify-content: space-between; 
+    margin: auto;
+    padding: 0px 20px;
+}
+
+header .logo{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    width: 60px;
+}
+
+.contenedorNav{
+    position: relative;
+    height: 100%;
+}
+
+nav{
+    height: 100%;
+}
+
+nav ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li{
+    margin: 0px 20px;
+    list-style: none;
+}
+
+nav ul li a{
+    color: #373737;
+    font-size: 14px;
+}
+
+.select{
+    background: #359EF9;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 20px;
+}
+
+/*COVER*/
+
+.cover{
+    width: 100%;
+    padding-bottom: 60px;
+    font-family: sans-serif;
+    margin-top: 60px;
+}
+
+.contenedorPresentacion{
+
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    background-image: url(/img/background-cover.svg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.cover .containerInfo{
+    max-width: 350px;
+    margin-top: 40px;
+    z-index: 2;
+}
+.containerImg img{
+     width: 800px;
+}
+
+.cover h1{
+    max-width: 350px;
+    font-size: 51px;
+    font-weight: 900;
+    color: #373737;
+}
+
+.cover h2{
+    font-size: 51px;
+    font-weight: 900;
+    color: #359EF9;
+    margin-top: -30px;
+}
+
+.cover p{
+    margin-top: 10px;
+    color: #373737;
+}
+
+.cover input[type="button"]{
+    padding: 10px 40px;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    color: white;
+    background: #359EF9;
+    border-radius: 20px;
+    box-shadow: 1px 1px 30px -5px #20202049;
+    cursor: pointer;
+    transition: box-shadow 500ms;
+}
+
+.cover input[type="button"]:hover{
+    box-shadow: 1px 1px 30px -5px #20202085;
+}
+
+
+/*CUERPO PRINCIPAL*/
+.cuerpoPagina h1{
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    color: #373737;
+}
+.contenedorArticulo{
+    padding: 0px 20px;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contenedorArticulo .cardArticulo{
+    width: 200px;
+    height: 250px;
+    background: #EFF3F5;
+    margin: 20px 5px;
+}
+
+
+/*AQUI COMIENZA EL FOOTER*/
+
+footer{
+    width: 100%;
+    padding: 5px 50px 0px;
+    font-family: sans-serif;
+ 
+    background-image: url(/img/background-footer.svg);
+    background-size: cover;
+}
+
+.contenedorFooter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.cardFooter{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 40px 10px 40px;
+}
+
+.cardFooter .logo img{
+    width: 100px;
+}
+
+.cardFooter .terms{
+    margin-top: 20px;
+    font-weight: 500;
+    color: #7a7a7a;
+    font-size: 18px;
+
+}
+
+.cardFooter h2{
+    margin-bottom: 30px;
+    color: #242424;
+    font-weight: 700;
+}
+
+.cardFooter a{
+    margin-top: 10px;
+    color: #7a7a7a;
+    font-weight: 600;
+}
+
+.cardFooter a:hover{
+    opacity: 0.8;
+}
+
+.cardFooter a .fab{
+    font-size: 20px;
+}
+
+.divFooter{
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.divFooter p{
+    margin-top: 20px;
+    color: #7a7a7a;
+}
+
+.divFooter hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
