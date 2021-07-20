@@ -79,6 +79,8 @@ nav ul li a{
 .cuerpoPagina{
    width: 100%;
    margin:125px 0px 60px 0px;
+   padding-top: 50px;
+    padding-bottom: 40px;
    align-content: center;
    background-image: url(../img/background-cover.svg);
    background-size:contain;

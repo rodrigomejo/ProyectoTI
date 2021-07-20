@@ -6,24 +6,11 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
    <link rel="stylesheet" href="./css/estiloInicioRegistro.css">
+   <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
    <header id="header">
-      <div class="contenedorHeader">
-          <div class="logo">
-              <img src="./img/2103622.png" alt="">
-          </div>
-          <div class="contenedorNav">
-              <nav id="nav">
-                  <ul>
-                      <li><a href="/index.html" >INICIO</a></li>
-                      <li><a href="#">EMPRENDIMIENTOS</a></li>
-                      <li><a href="#" class="select">INICIAR SESION</a></li>
-                  </ul>
-              </nav>
-          </div>
-      </div>
    </header>
    <div class="cuerpoPagina">
 
@@ -45,19 +32,20 @@
          </div>
           <div class="contenedorLogin_Registro">
              
-             <form action="" class="formLogin">
+             <form action="" id="formLogin"class="formLogin">
                 <h2>Iniciar sesion</h2>
-                <input type="text" placeholder="Correo Electronico">
-                <input type="password" placeholder="Contraseña">
-                <button>Entrar</button>
+                <input type="text" name="email" placeholder="Correo Electronico">
+                <input type="password" name="password" placeholder="Contraseña">
+                <button id="btnInicioForm">Entrar</button>
              </form>
-             <form action="" class="formRegistro">
+             <form action="" id="formRegistro" class="formRegistro">
                 <h2>Registrarse</h2>
-                <input type="text" placeholder="Nombre y Apellido">
-                <input type="text" placeholder="Usuario">
-                <input type="text" placeholder="Correo Electronico">
-                <input type="password" placeholder="Contraseña">
-                <button>Registrarse</button>
+                <input type="text" name="nombreCompleto"placeholder="Nombre y Apellido">
+                <input type="text" name="usuario" placeholder="Usuario">
+                <input type="text" name="email" placeholder="Correo Electronico">
+                <input type="text"name="telefono" placeholder="Telefono">
+                <input type="password" name="password" placeholder="Contraseña">
+                <button id="btnRegistroForm">Registrarse</button>
              </form>
  
           </div>
