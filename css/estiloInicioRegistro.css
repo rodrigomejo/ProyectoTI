@@ -138,11 +138,17 @@ nav ul li a{
 }
 .contenedorLogin_Registro form{
    width: 100%;
-   padding: 65px 20px;
    background: #fff;
    position: absolute;
    border-radius: 20px;
    border: solid #318de9;
+   text-align: center;
+}
+#formLogin{
+   padding: 65px 20px;
+}
+#formRegistro{
+   padding: 35px 20px;
 }
 .contenedorLogin_Registro form h2 {
    font-size: 38px;
@@ -150,15 +156,7 @@ nav ul li a{
    margin-bottom: 20px;
    color: #46a2fd ;
 }
-.contenedorLogin_Registro form input {
-   width: 100%;
-   margin-top: 20px;
-   padding: 10px;
-   border: none;
-   background: #f2f2f2;
-   font-size: 16px;
-   outline: none;
-}
+
 .contenedorLogin_Registro form button {
    padding: 10px 40px;
    margin-top: 40px;
@@ -177,10 +175,70 @@ nav ul li a{
 .formRegistro{
    display: none;
 }
+.divRegistroInput{
+   position: relative;
+}
 
+.formRegistroinputnombreCompleto,.formRegistroinputusuario, .formRegistroinputemail,.formRegistroinputtelefono, .formRegistroinputpassword  {
+   width: 100%;
+	background: #f2f2f2;
+	border: 3px solid transparent;
+	border-radius: 10px;
+	height: 45px;
+	line-height: 45px;
+   margin-top: 10px;
+	transition: .3s ease all;
+   font-size: 16px;
+}
+.formLoginInput{
+   width: 100%;
+	background: #f2f2f2;
+	border: 3px solid transparent;
+	border-radius: 10px;
+	height: 45px;
+	line-height: 45px;
+   margin-top: 20px;
+   font-size: 16px;
+}
 
+.formRegistroinputnombreCompleto:focus,.formRegistroinputusuario:focus, .formRegistroinputemail:focus,.formRegistroinputtelefono:focus, .formRegistroinputpassword:focus, .formLoginInput:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 10px rgba(163,163,163, 0.4);
+}
 
+.registroValidacionEstado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+/* Validacion de los Input registro*/
+.divRegistroInput-correcto .registroValidacionEstado {
+	color: #1ed12d;
+	opacity: 1;
+}
 
+.divRegistroInput-incorrecto {
+	color: #bb2929;
+}
+
+.divRegistroInput-incorrecto .registroValidacionEstado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.divRegistroInput-incorrecto .formRegistroinputnombreCompleto, .divRegistroInput-incorrecto .formRegistroinputusuario, .divRegistroInput-incorrecto .formRegistroinputemail, .divRegistroInput-incorrecto .formRegistroinputtelefono, .divRegistroInput-incorrecto .formRegistroinputpassword  {
+	border: 3px solid #bb2929;
+}
+.errorRegistro{
+   margin-top: 15px;
+   color: red;
+   display: none;
+   font-family: sans-serif;
+}
 /*AQUI COMIENZA EL FOOTER*/
 
 footer{

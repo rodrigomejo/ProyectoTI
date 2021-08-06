@@ -46,6 +46,9 @@ function constructorHeader(){
    header.appendChild(divContenedorHeader);
 
    generarNav(datosNav);
+
+
+
 }
 constructorHeader()
 //Funcion verificar si hay una sesion iniciada 
@@ -108,6 +111,7 @@ function constructorBarraBusqueda() {
       inputBuscar.setAttribute('placeholder','BUSCAR');
    let btnBuscar = document.createElement('button');
       btnBuscar.classList.add('icon');
+      btnBuscar.setAttribute('id','btnsearch');
    let iBuscar = document.createElement('i');
       iBuscar.classList.add('fa', 'fa-search')
    btnBuscar.appendChild(iBuscar);
@@ -140,7 +144,7 @@ function categoria(categorias){
 }
 var emprendimientos =[];
 //Cargar los emprendimientos guardados
-function verificarConCarrito(){
+function verificarEmprendimientos(){
    let e = JSON.parse(localStorage.getItem('Emprendimientos'));
    if (e !== null) {
        if (e.length !== 0) {
@@ -151,7 +155,8 @@ function verificarConCarrito(){
        }   
    }
 }
-verificarConCarrito();
+verificarEmprendimientos();
+//Generador card emprendimientos 
 function generadorCard(emprendimientos) {
    let contenedorCardPrincipal = document.getElementById("contenedorCardPrincipal");
    emprendimientos.forEach(element => {
@@ -207,3 +212,10 @@ function generadorCard(emprendimientos) {
    });
 
 }
+//Funcion buscador 
+function buscarEmprendimientos () {
+   
+   
+}
+
+
