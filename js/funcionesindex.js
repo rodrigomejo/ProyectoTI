@@ -1,26 +1,26 @@
 const datosNav=[
    {
    texto: "INICIO",
-   link: "/index.html",
+   link: "index.php",
    sesionOff: true,
    sesionOn: true 
    },
    {
       texto: "EMPRENDIMIENTOS",
-      link: "/emprendimientos.html",
+      link: "emprendimientos.php",
       sesionOff: true,
       sesionOn: true 
    },
    {
       texto: "NOMBRE USUARIO",
-      link: "/perfilUsuario.html",
+      link: "perfilUsuario.php",
       sesionOff: false,
       sesionOn: true 
    
    },
    {
       texto: "INICIAR SESION",
-      link: "/inicioRegistro.html",
+      link: "inicioRegistro.php",
       sesionOff: true,
       sesionOn: false 
    }
