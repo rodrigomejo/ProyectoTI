@@ -84,72 +84,6 @@ function constructorNav(barraNav) {
       liInicioUsuario.setAttribute('dataSet', sesion.id)
    }
 } 
-const usuariosRegistrado=[];
-console.log(JSON.parse(localStorage.getItem('usuariosRegistrado')))
-//constructor de objeto de emprendimiento
-function nUsuario(nombre,usuario,email,telefono,password){
-   this.nombre=nombre;
-   this.usuario=usuario;
-   this.email=email;
-   this.telefono = telefono
-   this.password=password;
-   if (JSON.parse(localStorage.getItem('usuariosRegistrado')) === null) {
-      this.id=1;
-   }else{
-      this.id = (1 +(JSON.parse(localStorage.getItem('usuariosRegistrado')).length ))
-   }
-}
-//Funcion registro
-var btnRegistro = document.getElementById('btnRegistroForm')
-btnRegistro.addEventListener('click', function registro(e){
-   e.preventDefault()
-   let nombre, usuario, email, telefono, password
-   let divRegistroInput = document.querySelectorAll('.divRegistroInput-correcto')
-   let check = document.getElementById('check-modal')
-   if (divRegistroInput.length === 5) {
-      for (let index = 0; index < divRegistroInput.length; index++) {
-         if (divRegistroInput[index].children[0].name === "nombreCompleto") {
-           nombre = divRegistroInput[index].children[0].value
-         }
-         if (divRegistroInput[index].children[0].name === "usuario") {
-           usuario = divRegistroInput[index].children[0].value
-         }
-         if (divRegistroInput[index].children[0].name === "email") {
-           email= divRegistroInput[index].children[0].value
-         }
-         if (divRegistroInput[index].children[0].name === "telefono") {
-           telefono = divRegistroInput[index].children[0].value
-         }
-         if (divRegistroInput[index].children[0].name === "password") {
-           password = divRegistroInput[index].children[0].value
-         }
-     }
-     nuevoUsuario = new nUsuario(nombre, usuario, email, telefono, password)
-     //verifica si existe usuarios en el local y si devuele distinto de null trae los datos e inserta el nuevo usuario
-     let aceptarModal = document.getElementById('lblAceptarModal')
-     if (JSON.parse(localStorage.getItem('usuariosRegistrado')) === null) {
-        usuariosRegistrado.push(nuevoUsuario)
-        guardarDatos()
-        check.checked = true;
-        aceptarModal.addEventListener('click', ()=>{
-         window.location.reload()
-        })
-     }else{
-        for (let index = 0; index < JSON.parse(localStorage.getItem('usuariosRegistrado')).length; index++) {
-           usuariosRegistrado.push( JSON.parse(localStorage.getItem('usuariosRegistrado'))[index])
-        }
-        usuariosRegistrado.push(nuevoUsuario)
-        guardarDatos()
-        check.checked = true;
-        aceptarModal.addEventListener('click', ()=>{
-         window.location.reload()
-        })
-     }
-   }else{pError = document.getElementsByClassName('errorRegistro')[0]
-         pError.style.display = "block"
-   
-}
-})
 //Expresiones para los datos del los inputs
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-\s]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -179,9 +113,9 @@ const validarDatos = (e) => {
             e.target.parentElement.classList.remove('divRegistroInput-incorrecto')
          }
 		break;
-		case "password":
+		case "passwordRegistro":
          if (e.target.value !== "") {
-            validarCampo(expresiones.password, e.target, 'password');
+            validarCampo(expresiones.password, e.target, 'passwordRegistro');
          }else {
             e.target.parentElement.classList.remove('divRegistroInput-correcto')
             e.target.parentElement.classList.remove('divRegistroInput-incorrecto')
@@ -226,10 +160,26 @@ inputRegistro.forEach((input) => {
 	input.addEventListener('blur', validarDatos);
 });
 
-//funcion guardar usuarios en el localstorage
-function guardarDatos(){
-   localStorage.setItem('usuariosRegistrado', JSON.stringify(usuariosRegistrado));
+   let btnRegistroFrom =document.getElementById('btnRegistroFrom')
+   console.log(document.getElementById('formRegistro'))
+   console.log("Holaa")
+if (btnRegistroFrom !== null){
+   
+
+  btnRegistroFrom.addEventListener('click', function(e){    
+   e.preventDefault
+   console.log(e)
+   $.ajax({
+      url: '../php/registroUsuario.php',
+      type: 'POST',
+      data: $('formRegistro').serialize(),
+      success: function(res){
+         alert("funciono ");
+      }
+   })
+})
 }
+
 //Funcion inicio de sesion 
 btnInicioForm = document.getElementById('btnInicioForm')
 btnInicioForm.addEventListener('click', function iniciarSesion(e){

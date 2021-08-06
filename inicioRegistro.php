@@ -39,7 +39,7 @@
                 <input type="password" class="formLoginInput" name="password" placeholder="Contraseña">
                 <button id="btnInicioForm">Entrar</button>
              </form>
-             <form action="" id="formRegistro" class="formRegistro">
+             <form action="" method="POST" id="formRegistro" class="formRegistro">
                 <h2>Registrarse</h2>
                 <div class="divRegistroInput">
                   <input type="text" class="formRegistroinputnombreCompleto" name="nombreCompleto" placeholder="Nombre y Apellido">
@@ -58,7 +58,7 @@
                   <i class="registroValidacionEstado fas fa-times-circle"></i>
                </div>
                <div class="divRegistroInput">
-                  <input type="password"class="formRegistroinputpassword" name="password" placeholder="Contraseña">
+                  <input type="password"class="formRegistroinputpasswordRegistro" name="passwordRegistro" placeholder="Contraseña">
                   <i class="registroValidacionEstado fas fa-times-circle"></i>
                </div>
                <p class="errorRegistro"><i class="fas fa-times-circle"></i> DEBE COMPLETAR TODOS LOS CAMPOS CORRECTAMENTE</p>
@@ -113,6 +113,7 @@
        <p>Todos los derechos reservados © 2021</p>
    </div>
    </Footer>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <script src="./js/funcionInicioRegistro.js"></script>
 </body>
 </html>

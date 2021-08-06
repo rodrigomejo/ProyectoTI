@@ -179,7 +179,7 @@ nav ul li a{
    position: relative;
 }
 
-.formRegistroinputnombreCompleto,.formRegistroinputusuario, .formRegistroinputemail,.formRegistroinputtelefono, .formRegistroinputpassword  {
+.formRegistroinputnombreCompleto,.formRegistroinputusuario, .formRegistroinputemail,.formRegistroinputtelefono, .formRegistroinputpasswordRegistro {
    width: 100%;
 	background: #f2f2f2;
 	border: 3px solid transparent;
@@ -201,7 +201,7 @@ nav ul li a{
    font-size: 16px;
 }
 
-.formRegistroinputnombreCompleto:focus,.formRegistroinputusuario:focus, .formRegistroinputemail:focus,.formRegistroinputtelefono:focus, .formRegistroinputpassword:focus, .formLoginInput:focus {
+.formRegistroinputnombreCompleto:focus,.formRegistroinputusuario:focus, .formRegistroinputemail:focus,.formRegistroinputtelefono:focus, .formRegistroinputpasswordRegistro:focus, .formLoginInput:focus {
 	border: 3px solid #0075FF;
 	outline: none;
 	box-shadow: 3px 0px 10px rgba(163,163,163, 0.4);
@@ -230,7 +230,7 @@ nav ul li a{
 	opacity: 1;
 }
 
-.divRegistroInput-incorrecto .formRegistroinputnombreCompleto, .divRegistroInput-incorrecto .formRegistroinputusuario, .divRegistroInput-incorrecto .formRegistroinputemail, .divRegistroInput-incorrecto .formRegistroinputtelefono, .divRegistroInput-incorrecto .formRegistroinputpassword  {
+.divRegistroInput-incorrecto .formRegistroinputnombreCompleto, .divRegistroInput-incorrecto .formRegistroinputusuario, .divRegistroInput-incorrecto .formRegistroinputemail, .divRegistroInput-incorrecto .formRegistroinputtelefono, .divRegistroInput-incorrecto .formRegistroinputpasswordRegistro  {
 	border: 3px solid #bb2929;
 }
 .errorRegistro{
@@ -246,7 +246,7 @@ footer{
    padding: 5px 5px 0px;
    font-family: sans-serif;
 
-   background-image: url(/img/background-footer.svg);
+   background-image: url(../img/background-footer.svg);
    background-size: cover;
 }
 

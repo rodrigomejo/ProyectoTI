@@ -93,7 +93,7 @@ nav ul li a{
     justify-content: space-between;
     position: relative;
 
-    background-image: url(/img/background-cover.svg);
+    background-image: url(../img/background-cover.svg);
     background-size: cover;
     background-position: bottom;
 }
@@ -178,7 +178,7 @@ footer{
     padding: 5px 50px 0px;
     font-family: sans-serif;
  
-    background-image: url(/img/background-footer.svg);
+    background-image: url(../img/background-footer.svg);
     background-size: cover;
 }
 
