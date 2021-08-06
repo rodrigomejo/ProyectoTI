@@ -81,7 +81,8 @@ nav ul li a{
     width: 100%;
     padding-bottom: 60px;
     font-family: sans-serif;
-    margin-top: 60px;
+    margin-top: 70px;
+    margin-bottom: 20px;
 }
 
 .contenedorPresentacion{
@@ -148,7 +149,8 @@ nav ul li a{
 .cuerpoPagina h1{
     width: 100%;
     text-align: center;
-    font-size: 50px;
+    font-family: sans-serif;
+    font-size: 40px;
     font-weight: 900;
     color: #373737;
 }
