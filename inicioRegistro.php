@@ -49,14 +49,17 @@
                   <input type="text" class="formRegistroinputusuario" name="usuario" placeholder="Usuario">
                   <i class="registroValidacionEstado fas fa-times-circle"></i>
                </div>
+               <p class="errorUsuario"><i class="fas fa-times-circle"></i> EL USUARIO YA ESTA REGISTRADO</p>
                <div class="divRegistroInput">
                   <input type="text" class="formRegistroinputemail" name="email" placeholder="Correo Electronico">
                   <i class="registroValidacionEstado fas fa-times-circle"></i>
                </div>
+               <p class="errorCorreo"><i class="fas fa-times-circle"></i> EL CORREO YA ESTA REGISTRADO</p>
                <div class="divRegistroInput">
                   <input type="text" class="formRegistroinputtelefono"name="telefono" placeholder="Telefono">
                   <i class="registroValidacionEstado fas fa-times-circle"></i>
                </div>
+               <p class="errorTelefono"><i class="fas fa-times-circle"></i> EL TELEFONO YA ESTA REGISTRADO</p>
                <div class="divRegistroInput">
                   <input type="password"class="formRegistroinputpasswordRegistro" name="passwordRegistro" placeholder="Contraseña">
                   <i class="registroValidacionEstado fas fa-times-circle"></i>
@@ -67,7 +70,7 @@
                   <input type="checkbox" id="check-modal">
                   <div class="modal">
                      <div class="contenedor">
-                        <div class="contenido">
+                        <div id="contenidoModal" class="contenido">
                            <i class="validacionEstado fas fa-check-circle"></i>
                            <p>USUARIO REGISTRADO CON EXITO</p>
                            <label for="check-modal" id="lblAceptarModal">Aceptar</label>

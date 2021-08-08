@@ -160,26 +160,50 @@ inputRegistro.forEach((input) => {
 	input.addEventListener('blur', validarDatos);
 });
 
-   let btnRegistroFrom =document.getElementById('btnRegistroFrom')
-   console.log(document.getElementById('formRegistro'))
-   console.log("Holaa")
-if (btnRegistroFrom !== null){
-   
+function registroUsuario(dato){
 
-  btnRegistroFrom.addEventListener('click', function(e){    
-   e.preventDefault
-   console.log(e)
-   $.ajax({
-      url: '../php/registroUsuario.php',
-      type: 'POST',
-      data: $('formRegistro').serialize(),
-      success: function(res){
-         alert("funciono ");
-      }
+   dato.addEventListener('click', function(e){    
+      let divRegistroInput = document.querySelectorAll('.divRegistroInput-correcto')
+      e.preventDefault()
+      if (divRegistroInput.length === 5) {
+         $.ajax({
+            url: './php/registroUsuario.php',
+            type: 'POST',
+            data: $('#formRegistro').serialize(),
+            success: function(res){
+               let check = document.getElementById('check-modal') ;
+               let aceptarModal = document.getElementById('lblAceptarModal');
+               let contenidoModal = document.getElementById('contenidoModal')
+               if (res === "1") {
+               check.checked = true;
+               aceptarModal.addEventListener('click', ()=>{
+                  window.location.reload();
+               })
+               }else if (res ==="") {
+               contenidoModal.childNodes[1].classList =""
+               contenidoModal.childNodes[1].classList ="validacionEstado fas fa-times-circle"
+               contenidoModal.childNodes[1].style.color= "red"
+               contenidoModal.childNodes[3].innerText= "NO SE PUDO REGISTRAR EL USUARIO"
+               check.checked = true;
+               aceptarModal.addEventListener('click', ()=>{
+                  contenidoModal.childNodes[1].classList =""
+               contenidoModal.childNodes[1].classList ="validacionEstado fas fa-check-circle"
+               contenidoModal.childNodes[1].style.color= "green"
+               contenidoModal.childNodes[3].innerText= "USUARIO REGISTRADO CON EXITO"
+               
+               })
+               } else { 
+                  datosDuplicados = document.getElementsByClassName(''+res+'')[0]
+                  console.log(res)
+                  datosDuplicados.style.display = "block"
+               }
+            }
+         })
+      }else{pError = document.getElementsByClassName('errorRegistro')[0]
+            pError.style.display = "block"
+         }
    })
-})
 }
-
 //Funcion inicio de sesion 
 btnInicioForm = document.getElementById('btnInicioForm')
 btnInicioForm.addEventListener('click', function iniciarSesion(e){
@@ -222,6 +246,8 @@ function validarUsuario(email, password){
       }
    }
 }
+
+
 //Eventos 
 document.getElementById("btnRegistro").addEventListener("click", registroForm);
 document.getElementById("btnLogin").addEventListener("click", login);
@@ -241,6 +267,7 @@ function registroForm(){
          contenedorLogin_Registro.style.left = "410px";
          cajaTraseraRegistro.style.opacity = "0";
          cajaTraseraLogin.style.opacity = "1";
+         registroUsuario(document.getElementById('btnRegistroForm'))
       } else {
          formRegistro.style.display = "block";
          formLogin.style.display = "none";

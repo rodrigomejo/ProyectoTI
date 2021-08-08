@@ -233,7 +233,7 @@ nav ul li a{
 .divRegistroInput-incorrecto .formRegistroinputnombreCompleto, .divRegistroInput-incorrecto .formRegistroinputusuario, .divRegistroInput-incorrecto .formRegistroinputemail, .divRegistroInput-incorrecto .formRegistroinputtelefono, .divRegistroInput-incorrecto .formRegistroinputpasswordRegistro  {
 	border: 3px solid #bb2929;
 }
-.errorRegistro{
+.errorRegistro,.errorUsuario, .errorCorreo, .errorTelefono{
    margin-top: 15px;
    color: red;
    display: none;
