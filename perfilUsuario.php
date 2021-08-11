@@ -14,7 +14,7 @@
       <div class="barraLateralUsuario">
          <nav class="navUsuario">
             <div class="divImgUsuario">
-               <img src="/img/8a8d3f62663f719adc1b4402d1ce9d8f.jpg" alt="">
+               <img src="./img/8a8d3f62663f719adc1b4402d1ce9d8f.jpg" alt="">
                <h3>NOMBRE USUARIO</h3>
             </div>
             

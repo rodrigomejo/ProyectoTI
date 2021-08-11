@@ -243,14 +243,14 @@ function respuestaInicio(dato) {
       })
     
    }else {
-      contenidoModal.childNodes[3].innerText= "BIENVENIDO"
+      contenidoModal.childNodes[3].innerText= "BIENVENIDO"+" "+ dato.toUpperCase();
       check.checked = true;
       aceptarModal.addEventListener('click', ()=>{
          contenidoModal.childNodes[1].classList =""
          contenidoModal.childNodes[1].classList ="validacionEstado fas fa-check-circle"
          contenidoModal.childNodes[1].style.color= "green"
          contenidoModal.childNodes[3].innerText= "USUARIO REGISTRADO CON EXITO"
-        // window.location.reload();
+         window.location.href = "./perfilUsuario.php"
       })
    }
    

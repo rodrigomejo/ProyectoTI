@@ -17,7 +17,10 @@ include 'conexion.php';
 
 
    if (($nr == 1) && (password_verify($password, $datosUsuarios['password']))){
-      echo $datosUsuarios['nombreCompleto']." ".$datosUsuarios['id'];
+      session_start();
+      $_SESSION['nombreCompleto'] = $datosUsuarios['nombreCompleto'];
+      $_SESSION['id'] = $datosUsuarios['id'];
+      echo $datosUsuarios['nombreCompleto'];
    } else {
       echo "0";
    }
