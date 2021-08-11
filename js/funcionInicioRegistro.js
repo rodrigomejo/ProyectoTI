@@ -94,12 +94,13 @@ const expresiones = {
 }
 //Funcion Validar datos del Input
 const validarDatos = (e) => {
-   pError = document.getElementsByClassName('errorRegistro')[0]
-         pError.style.display = "none"
+   document.getElementsByClassName('errorRegistro')[0].style.display = "none"
+      
 	switch (e.target.name) {
 		case "usuario":
          if (e.target.value !== "") {
             validarCampo(expresiones.usuario, e.target, 'usuario');
+            document.getElementsByClassName('errorUsuario')[0].style.display = "none"
          }else {
             e.target.parentElement.classList.remove('divRegistroInput-correcto')
             e.target.parentElement.classList.remove('divRegistroInput-incorrecto')
@@ -124,6 +125,7 @@ const validarDatos = (e) => {
 		case "email":
          if (e.target.value !== "") {
             validarCampo(expresiones.correo, e.target, 'email');
+            document.getElementsByClassName('errorCorreo')[0].style.display = "none"
          }else {
             e.target.parentElement.classList.remove('divRegistroInput-correcto')
             e.target.parentElement.classList.remove('divRegistroInput-incorrecto')
@@ -132,6 +134,7 @@ const validarDatos = (e) => {
 		case "telefono":
          if (e.target.value !== "") {
             validarCampo(expresiones.telefono, e.target, 'telefono');
+            document.getElementsByClassName('errorTelefono')[0].style.display = "none"
          }else {
             e.target.parentElement.classList.remove('divRegistroInput-correcto')
             e.target.parentElement.classList.remove('divRegistroInput-incorrecto')
@@ -159,7 +162,25 @@ inputRegistro.forEach((input) => {
 	input.addEventListener('keyup', validarDatos);
 	input.addEventListener('blur', validarDatos);
 });
+//Funcion marcar los campos que tiene datos duplicados
+function datosDuplicados(dato){
+   let datoDuplicado = dato.split(' '); 
+   
+   for (let index = 0; index < datoDuplicado.length; index++) {
+      if (datoDuplicado[index]!== "0") {
+         pdatosDuplicados = document.getElementsByClassName(''+datoDuplicado[index]+'')[0];
+         pdatosDuplicados.style.display = "block";
+         document.getElementsByClassName(''+datoDuplicado[index]+'')[0].previousElementSibling.classList.add('divRegistroInput-incorrecto');
+         document.getElementsByClassName(''+datoDuplicado[index]+'')[0].previousElementSibling.classList.remove('divRegistroInput-correcto');
+         document.getElementsByClassName(''+datoDuplicado[index]+'')[0].previousElementSibling.childNodes[3].classList.add('fa-times-circle');
+         document.getElementsByClassName(''+datoDuplicado[index]+'')[0].previousElementSibling.childNodes[3].classList.remove('fa-check-circle');
+      }
+      
+      
+   }
+}
 
+//Funcion registrar usuario
 function registroUsuario(dato){
 
    dato.addEventListener('click', function(e){    
@@ -193,60 +214,61 @@ function registroUsuario(dato){
                
                })
                } else { 
-                  datosDuplicados = document.getElementsByClassName(''+res+'')[0]
-                  console.log(res)
-                  datosDuplicados.style.display = "block"
+                  datosDuplicados(res);
                }
             }
          })
-      }else{pError = document.getElementsByClassName('errorRegistro')[0]
-            pError.style.display = "block"
+      }else{
+         pError = document.getElementsByClassName('errorRegistro')[0]
+         pError.style.display = "block"
          }
    })
 }
+//Funcion Respuesta inicio de sesion
+function respuestaInicio(dato) {
+   let check = document.getElementById('check-modal') ;
+   let aceptarModal = document.getElementById('lblAceptarModal');
+   let contenidoModal = document.getElementById('contenidoModal')
+   if (dato === "0") {
+      contenidoModal.childNodes[1].classList =""
+      contenidoModal.childNodes[1].classList ="validacionEstado fas fa-times-circle"
+      contenidoModal.childNodes[1].style.color= "red"
+      contenidoModal.childNodes[3].innerText= "USUARIO Y/O CONTRASEÑA INCORRECTO"
+      check.checked = true;
+      aceptarModal.addEventListener('click', ()=>{
+         contenidoModal.childNodes[1].classList =""
+         contenidoModal.childNodes[1].classList ="validacionEstado fas fa-check-circle"
+         contenidoModal.childNodes[1].style.color= "green"
+         contenidoModal.childNodes[3].innerText= "USUARIO REGISTRADO CON EXITO"
+      })
+    
+   }else {
+      contenidoModal.childNodes[3].innerText= "BIENVENIDO"
+      check.checked = true;
+      aceptarModal.addEventListener('click', ()=>{
+         contenidoModal.childNodes[1].classList =""
+         contenidoModal.childNodes[1].classList ="validacionEstado fas fa-check-circle"
+         contenidoModal.childNodes[1].style.color= "green"
+         contenidoModal.childNodes[3].innerText= "USUARIO REGISTRADO CON EXITO"
+        // window.location.reload();
+      })
+   }
+   
+}
 //Funcion inicio de sesion 
 btnInicioForm = document.getElementById('btnInicioForm')
-btnInicioForm.addEventListener('click', function iniciarSesion(e){
-   e.preventDefault()
-   var inputFormInicio = document.getElementById('formLogin').getElementsByTagName('input')
-   let password, email;
-   for (let index = 0; index < inputFormInicio.length; index++) {
-      if (inputFormInicio[index].name=== 'email') {
-        
-         if (inputFormInicio[index].value !== '') {
-               email=inputFormInicio[index].value
-         } else { alert ("El correo no puede estar vacio")}
-
-      } else if (inputFormInicio[index].name === 'password') {
-
-         if (inputFormInicio[index].value !== '') {
-            password=inputFormInicio[index].value
-         } else { alert ("La contraseña  no puede estar vacia")}
-
-      }
-      
-   }
-   let usuarioValido = validarUsuario(email, password)
-   if (usuarioValido !== undefined) {
-         localStorage.setItem('sesion', JSON.stringify(usuarioValido));
-         window.location.href ="./perfilUsuario.php" 
-   }else {
-         alert("Correo y/o contraseña incorrecta")
-   }
-}) 
-// Validar si el usuario existe
-function validarUsuario(email, password){
-   let usuarios = JSON.parse(localStorage.getItem('usuariosRegistrado'))
-
-   for (let index = 0; index < usuarios.length; index++) {
-      if (usuarios[index].email === email){
-         if (usuarios[index].password === password) {
-           return usuarios[index]
+btnInicioForm.addEventListener('click', function(e){    
+      e.preventDefault()
+      $.ajax({
+         url: './php/inicioUsuario.php',
+         type: 'POST',
+         data: $('#formLogin').serialize(),
+         success: function(res){
+            respuestaInicio(res);
          }
-      }
-   }
-}
-
+      })
+})
+// Validar si el usuario existe
 
 //Eventos 
 document.getElementById("btnRegistro").addEventListener("click", registroForm);
@@ -292,5 +314,5 @@ function login(){
       cajaTraseraRegistro.style.display = "block";
       cajaTraseraLogin.style.display = "none";
    }
-   }
+}
  

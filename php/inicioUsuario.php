@@ -2,30 +2,24 @@
 
 include 'conexion.php';
 
-   $correo = $_POST['email'];
-   $contrasena = $_POST['contrasena'];
+   $usuarioCorreo = $_POST['usuarioCorreo'];
+   $password = $_POST['passwordLogin'];
+   if (filter_var($usuarioCorreo, FILTER_VALIDATE_EMAIL)) {
+      $verificarUsuario = "SELECT * FROM usuario WHERE correo = '$usuarioCorreo'";
+   }else{
+      $verificarUsuario = "SELECT * FROM usuario WHERE usuario = '$usuarioCorreo'";
+   }
+  
    
-   $verificarUsuario = "SELECT correo, contrasena FROM usuarios";
-   
-   $verificarUsuario = mysqli_query($conexion, $verificarUsuario);
+   $verificarUsuarioRes = mysqli_query($conexion, $verificarUsuario);
+   $nr = mysqli_num_rows($verificarUsuarioRes);
+   $datosUsuarios =  mysqli_fetch_array($verificarUsuarioRes);
 
-   if ($verificarUsuario !== ""){
 
-      echo '
-         <script>
-         alert("usuario CORRECTO");
-         window.location = "../formsloginRegis.php";
-         </script>
-          
-      ';
-   } else {echo '
-      <script>
-      alert("usuario incorrecto");
-      window.location = "../formsloginRegis.php";
-      </script>
-       
-   ';
-   
+   if (($nr == 1) && (password_verify($password, $datosUsuarios['password']))){
+      echo $datosUsuarios['nombreCompleto']." ".$datosUsuarios['id'];
+   } else {
+      echo "0";
    }
 
 ?>

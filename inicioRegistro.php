@@ -33,10 +33,10 @@
          </div>
           <div class="contenedorLogin_Registro">
              
-             <form action="" id="formLogin"class="formLogin">
+             <form action="" method="POST" id="formLogin"class="formLogin">
                 <h2>Iniciar sesion</h2>
-                <input type="text" class="formLoginInput" name="email" placeholder="Correo Electronico">
-                <input type="password" class="formLoginInput" name="password" placeholder="Contraseña">
+                <input type="text" class="formLoginInput" name="usuarioCorreo" placeholder="Usuario o Correo Electronico">
+                <input type="password" class="formLoginInput" name="passwordLogin" placeholder="Contraseña">
                 <button id="btnInicioForm">Entrar</button>
              </form>
              <form action="" method="POST" id="formRegistro" class="formRegistro">
@@ -66,7 +66,8 @@
                </div>
                <p class="errorRegistro"><i class="fas fa-times-circle"></i> DEBE COMPLETAR TODOS LOS CAMPOS CORRECTAMENTE</p>
                 <button id="btnRegistroForm">Registrarse</button>
-                <div class="contenedorModal">
+             </form>
+             <div class="contenedorModal">
                   <input type="checkbox" id="check-modal">
                   <div class="modal">
                      <div class="contenedor">
@@ -78,8 +79,6 @@
                      </div>
                   </div>
                 </div>
-             </form>
- 
           </div>
        </div> 
    </div>
