@@ -1,10 +1,16 @@
+<?php
+session_start();
+if (null == ( isset( $_SESSION['id']) ? $_SESSION['id'] : null )) {     
+   header("Location:./inicioRegistro.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Perfil</title>
+   <title>PERFIL</title>
    <link rel="stylesheet" href="./css/estilosPerfil.css">
 </head>
 <body>
@@ -16,6 +22,7 @@
             <div class="divImgUsuario">
                <img src="./img/8a8d3f62663f719adc1b4402d1ce9d8f.jpg" alt="">
                <h3>NOMBRE USUARIO</h3>
+               <a href="logout.php">Cerrar Sesión</a>
             </div>
             
             <label>DATOS USUARIO</label>

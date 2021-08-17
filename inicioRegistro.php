@@ -1,10 +1,17 @@
+<?php
+session_start();
+if ( true == ( isset( $_SESSION['id']) ? $_SESSION['id'] : null ) ) {
+   header("Location:./perfilUsuario.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>INICIO</title>
    <link rel="stylesheet" href="./css/estiloInicioRegistro.css">
    <link rel="stylesheet" href="./css/estiloModal.css">
    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>

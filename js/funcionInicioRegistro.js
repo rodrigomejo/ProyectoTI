@@ -250,7 +250,7 @@ function respuestaInicio(dato) {
          contenidoModal.childNodes[1].classList ="validacionEstado fas fa-check-circle"
          contenidoModal.childNodes[1].style.color= "green"
          contenidoModal.childNodes[3].innerText= "USUARIO REGISTRADO CON EXITO"
-         window.location.href = "./perfilUsuario.php"
+         window.location.href = "php/datosUsuario.php"
       })
    }
    
